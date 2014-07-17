@@ -151,7 +151,7 @@ class ACSPush{
 			CURLOPT_URL => $this->acs_api_url."/users/login.json?key=".$this->key,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => 1,
-			CURLOPT_POSTFIELDS => "login=".$this->creditentials["login"]."&password=".$this->creditentials["password"]
+			CURLOPT_POSTFIELDS => "login=".$this->creditentials["login"]."&password=".$this->creditentials["password"],
 			CURLOPT_FOLLOWLOCATION => 1,
 			CURLOPT_TIMEOUT => 60
 		);
@@ -173,7 +173,7 @@ class ACSPush{
 	private function construct_query($api){
 
 		//Init url
-		$this->curl_opt[CURLOPT_URL] = $this->acs_api_url."/push_notification/".$api.".json?key=".$this->key
+		$this->curl_opt[CURLOPT_URL] = $this->acs_api_url."/push_notification/".$api.".json?key=".$this->key;
 
 		//Init json payload
 		$json = array(
